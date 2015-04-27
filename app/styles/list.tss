@@ -1,0 +1,114 @@
+
+".container": {
+    backgroundColor:"white",
+	height: Ti.UI.FILL,
+	width: Ti.UI.FILL,
+	color: "black",
+}
+
+
+".header_container": {
+	height : Ti.UI.SIZE,
+	width: Ti.UI.FILL
+
+}
+
+".header_background": {
+	height : Ti.UI.SIZE,
+	width: Ti.UI.FILL,
+	backgroundColor : "gray"
+}
+
+".header_text": {
+	top:8, right: 16, bottom: 8, left: 16,
+	color: "black"
+}
+
+"#printButton": {	
+	width: Titanium.UI.FILL,
+	height: 50,
+	title: L('print_selected'),
+	bottom: 0,
+    borderRadius:1,
+    font:{fontFamily:'Arial',
+    fontWeight:'bold',
+    fontSize:14}
+}
+
+"#search": {
+	barColor: "#000",
+	showCancel: "true",
+	height: 43,
+	top: 0,
+	hintText: L('search_hint')
+}
+
+//template
+".title": {
+	left: 10,
+	right: 10,
+	top: 10,
+	font: {
+		fontSize: 18,
+		fontWeight: 'bold'
+		},
+	height: Titanium.UI.SIZE,
+	color: '#222',
+	textAlign: 'left',
+	width: '80%',
+}
+
+".image": {
+	left: 16,
+	top: 10,
+	width: 35,
+	height: 35
+}
+
+".shouldPrint": {
+	textAlign: "right",
+	top: 10,
+	right: 16
+}
+".itemContainer": {
+	left: 70, 
+}
+
+"#listView": {
+	height: Titanium.UI.FILL,
+	width: Titanium.UI.FILL,
+	bottom: 50
+}
+
+"#activityIndicator": {
+  	color: 'green',
+	font: {fontFamily:'Helvetica Neue', fontSize:26, fontWeight:'bold'},
+ 	message: 'Loading...',
+	style:Ti.UI.ActivityIndicatorStyle.DARK,
+	top:10,
+	left:10,
+	height:Ti.UI.SIZE,
+	width:Ti.UI.SIZE
+}
+
+".titleEmpty": {
+	top:10,
+	left:16,
+	text: L('no_print_jon_category')
+}
+
+"#emptyWaiting": {
+	height: 55,
+	layout: "vertical"
+}
+
+"#emptyFavorite": {
+	height: 55,
+	layout: "vertical"
+}
+
+"#emptyPrinted": {
+	height: 55,
+	layout: "horizontal",
+	width: Titanium.UI.FILL
+}

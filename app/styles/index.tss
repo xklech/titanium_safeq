@@ -1,0 +1,65 @@
+".container": {
+	backgroundColor:"white",
+	height: Titanium.UI.FILL,
+	width: Titanium.UI.FILL
+}
+
+"#editTextUserName": {
+    color:'#336699',
+    width:300,
+    height:40,
+    hintText: L('username'),
+    keyboardType:Titanium.UI.KEYBOARD_DEFAULT,
+    returnKeyType:Titanium.UI.RETURNKEY_NEXT,
+    borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED
+}
+
+"#editTextPassword": {
+   color:'#336699',
+    width:300,
+    height:40,
+    hintText: L('password'),
+    passwordMask:true,
+    keyboardType:Titanium.UI.KEYBOARD_DEFAULT,
+    returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,
+    borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED
+}
+
+
+"#loginButton": {
+	title: L('login'),
+    width:300,
+    height:50,
+    top:15,
+    borderRadius:1,
+    font:{fontFamily:'Arial',
+    fontWeight:'bold',
+    fontSize:14}
+}
+
+".containerView":{
+	layout: "vertical",
+	width: Titanium.UI.FILL,
+	height: Titanium.UI.SIZE
+}
+
+".logo":{
+	image: "/images/ic_safeq.png",
+	width: Titanium.UI.SIZE,
+	height: Titanium.UI.SIZE
+}
+
+".horizontal": {
+	top: 15,
+	layout: "horizontal",
+	width: Titanium.UI.SIZE,
+	height: Titanium.UI.SIZE
+}
+
+".ic_user":{
+	image: "/images/ic_user.png"
+}
+".ic_pwd":{
+	image: "/images/ic_password.png"
+}
+

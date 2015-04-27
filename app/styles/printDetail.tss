@@ -1,0 +1,91 @@
+
+".container": {
+  	backgroundColor:"white",
+	height: Titanium.UI.FILL,
+	width: Titanium.UI.FILL,
+
+	color: "black"
+}
+
+".logo":{
+	top: 20,
+	image: "/images/ic_safeq.png",
+	width: Titanium.UI.SIZE,
+	height: Titanium.UI.SIZE
+}
+
+".horizontal": {
+	top: 15,
+	layout: "horizontal",
+	width: Titanium.UI.SIZE,
+	height: Titanium.UI.SIZE
+}
+
+".valueClass": {
+	left:10,
+	height: Titanium.UI.FILL,
+	width: Titanium.UI.FILL,
+	textAlign: "left"
+}
+
+".nameClass": {
+	color: "black",
+	height: Titanium.UI.SIZE,
+	width: Titanium.UI.FILL,
+	textAlign: "right",
+	font:{fontWeight:"bold"},
+}
+
+
+
+
+".nameContainer": {
+	width: "50%",
+	height: Titanium.UI.SIZE
+}
+
+".scroll": {
+	width: Titanium.UI.FILL,
+	height: Titanium.UI.FILL,
+	layout: "vertical",
+}
+
+
+
+"#detailType":{
+	color: "black"
+}
+
+"#detailName":{
+	color: "black"
+}
+
+"#detailSize":{
+	color: "black"
+}
+
+"#detailAdded":{
+	color: "black"
+}
+
+"#detailBWPages":{
+	color: "black"
+}
+
+"#detailColorPages":{
+	color: "black"
+}
+
+"#detailOwner":{
+	color: "black"
+}
+
+"#detailPaperSize":{
+	color: "black"
+}
+
+"#detailFavorite":{
+	color: "black"
+}
+
+

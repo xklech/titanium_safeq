@@ -1,0 +1,17 @@
+<Alloy>
+	<Window class="container">
+		<View class="containerView">
+			
+			<ImageView class="logo"></ImageView>
+			<View class="horizontal">
+				<ImageView class="ic_user" class="ic_user"></ImageView>
+				<TextField id="editTextUserName" ></TextField>
+			</View>
+			<View class="horizontal">
+				<ImageView class="ic_pwd"></ImageView>
+				<TextField id="editTextPassword" ></TextField>
+			</View>
+			<Button id="loginButton" onClick="login"></Button>
+		</View>
+	</Window>
+</Alloy>

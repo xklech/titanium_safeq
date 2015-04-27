@@ -1,0 +1,46 @@
+
+".container" : {
+  	backgroundColor:"white",
+	height: Titanium.UI.FILL,
+	width: Titanium.UI.FILL,
+	layout: "vertical",
+	color: "black"
+}
+
+".logo":{
+	top: 20,
+	image: "/images/ic_safeq.png",
+	width: Titanium.UI.SIZE,
+	height: Titanium.UI.SIZE
+}
+
+".horizontal": {
+	top: 15,
+	layout: "horizontal",
+	width: Titanium.UI.SIZE,
+	height: Titanium.UI.SIZE
+}
+
+"#settingUserName": {
+	
+	left:10
+}
+
+"#settingUserSurname": {
+	left:10
+}
+
+"#settingLoggedIn": {
+	left:10
+}
+
+"#logoutButton": {
+	title: L('logout'),
+    width:300,
+    height:50,
+    top:15,
+    borderRadius:1,
+    font:{fontFamily:'Arial',
+    fontWeight:'bold',
+    fontSize:14}
+}

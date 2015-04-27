@@ -1,0 +1,78 @@
+<Alloy>
+	<Window class="container" onOpen="openWindow" title="Print job detail">
+ 		<ScrollView class="scroll">		
+			<View class="horizontal">
+				<View class="nameContainer">
+					<Label class="nameClass" text="Name:" />
+				</View>
+				<View class="nameContainer">
+					<Label id="detailName" class="valueClass"></Label>
+				</View>
+			</View>
+			<View class="horizontal">
+				<View class="nameContainer">
+					<Label class="nameClass" text="Type:"/>
+				</View>
+				<View class="nameContainer">
+					<Label id="detailType" class="valueClass"></Label>
+				</View>
+			</View>
+			<View class="horizontal">
+				<View class="nameContainer">
+					<Label class="nameClass" text="Size:" />
+				</View>
+				<View class="nameContainer">
+					<Label id="detailSize" class="valueClass"></Label>
+				</View>
+			</View>
+			<View class="horizontal">
+				<View class="nameContainer">
+					<Label class="nameClass" text="Added:" />
+				</View>
+				<View class="nameContainer">
+					<Label id="detailAdded" class="valueClass"></Label>
+				</View>
+			</View>
+			<View class="horizontal">
+				<View class="nameContainer">
+					<Label class="nameClass" text="Black/White pages:" />
+				</View>
+				<View class="nameContainer">
+					<Label id="detailBWPages" class="valueClass"></Label>
+				</View>
+			</View>
+			<View class="horizontal">
+				<View class="nameContainer">
+					<Label class="nameClass" text="Color pages:" />
+				</View>
+				<View class="nameContainer">
+					<Label id="detailColorPages" class="valueClass"></Label>
+				</View>
+			</View>
+			<View class="horizontal">
+				<View class="nameContainer">
+					<Label class="nameClass" text="Owner:" />
+				</View>
+				<View class="nameContainer">
+					<Label id="detailOwner" class="valueClass"></Label>
+				</View>
+			</View>
+			<View class="horizontal">
+				<View class="nameContainer">
+					<Label class="nameClass" text="Paper size:" />
+				</View>
+				<View class="nameContainer">
+					<Label id="detailPaperSize" class="valueClass"></Label>
+				</View>
+			</View>
+			<View class="horizontal" bottom="10">
+				<View class="nameContainer">
+					<Label class="nameClass" text="Favorite:" />
+				</View>
+				<View class="nameContainer">
+					<Label id="detailFavorite" class="valueClass"></Label>
+				</View>
+			</View>
+		</ScrollView>
+	</Window>
+</Alloy>

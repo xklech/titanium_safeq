@@ -1,0 +1,18 @@
+<Alloy>
+ 	<Window class="container" title="Settings">
+			<ImageView class="logo"></ImageView>
+			<View class="horizontal">
+				<Label color="black" text="L('user_name')" />
+				<Label id="settingUserName" color="black"></Label>
+			</View>
+			<View class="horizontal">
+				<Label color="black" text="L('user_surname')"/>
+				<Label id="settingUserSurname" color="black"></Label>
+			</View>
+			<View class="horizontal">
+				<Label color="black" text="L('logged_in')" />
+				<Label id="settingLoggedIn" color="black"></Label>
+			</View>
+			<Button id="logoutButton" onClick="logout"></Button>
+	</Window>
+</Alloy>

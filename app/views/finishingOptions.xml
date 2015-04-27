@@ -1,0 +1,150 @@
+<Alloy>
+	<Window class="container" onOpen="openWindow" title="Finishing options">
+		<Menu platform="android">
+		    <!-- Cannot specify node text.  Use attributes only. -->
+		    <MenuItem title="Show info" icon="images/ic_action_about.png" showAsAction="Ti.Android.SHOW_AS_ACTION_IF_ROOM"   onClick="showInfo" />
+		</Menu>
+ 		<ScrollView class="scroll">		
+			<View class="horizontal">
+				<View class="nameContainer">
+					<Label class="nameClass" text="Color mode:"/>
+				</View>
+				<View class="valueContainer">
+					<Picker id="colorMode" onChange="changeColorMode">
+						<PickerColumn>
+			                <PickerRow index="0" title="B&W"/>
+			                <PickerRow index="1" title="Color"/>
+			                <PickerRow index="2" title="Autocolor"/>
+			                <PickerRow index="3" title="Grayscale"/>
+		            	</PickerColumn>
+	            	</Picker>
+				</View>
+			</View>
+			<View class="horizontal">
+				<View class="nameContainer">
+					<Label class="nameClass" text="Sides:"/>
+				</View>
+				<View class="valueContainer">
+					<Picker id="sides" onChange="changeSides">
+						<PickerColumn>
+			                <PickerRow index="0" title="Simplex"/>
+			                <PickerRow index="1" title="Duplex"/>
+		            	</PickerColumn>
+	            	</Picker>
+				</View>
+			</View>
+			<View class="horizontal">
+				<View class="nameContainer">
+					<Label class="nameClass" text="Copy count:"/>
+				</View>
+				<View class="valueContainer">
+					<Button class="buttonMinus" onClick="decrementCopyCount" onTouchstart="touchStartClick" onTouchend="touchEndClick" onTouchcancel="touchEndClick" />
+					<Label id="copyCount">1</Label>
+					<Button class="buttonPlus" onClick="incrementCopyCount" onTouchstart="touchStartClick" onTouchend="touchEndClick" onTouchcancel="touchEndClick" />
+				</View>
+			</View>
+			<View class="horizontal">
+				<View class="nameContainer">
+					<Label class="nameClass" text="Stapling:"/>
+				</View>
+				<View class="valueContainer">
+					<Picker id="stapling" onChange="changeStapling">
+						<PickerColumn>
+			                <PickerRow index="0" title="No"/>
+			                <PickerRow index="1" title="Left corner top"/>
+			                <PickerRow index="2" title="Right corner top"/>
+			                <PickerRow index="3" title="2 positions"/>
+			                <PickerRow index="4" title="Left two"/>
+			                <PickerRow index="5" title="Right two"/>
+			                <PickerRow index="6" title="Top two"/>
+		            	</PickerColumn>
+	            	</Picker>
+				</View>
+			</View>
+			
+			
+			<View class="horizontal">
+				<View class="nameContainer">
+					<Label class="nameClass" text="Punch holes:"/>
+				</View>
+				<View class="valueContainer">
+					<Picker id="punchHoles" onChange="changePunchHoles">
+						<PickerColumn>
+			                <PickerRow index="0" title="No"/>
+			                <PickerRow index="1" title="2-Hole left"/>
+			                <PickerRow index="2" title="3-Hole left"/>
+			                <PickerRow index="3" title="4-Hole left"/>
+			                <PickerRow index="4" title="2-Hole right"/>
+			                <PickerRow index="5" title="3-Hole right"/>
+			                <PickerRow index="6" title="4-Hole right"/>
+			                <PickerRow index="7" title="2-Hole top"/>
+			                <PickerRow index="8" title="3-Hole top"/>
+			                <PickerRow index="9" title="4-Hole top"/>    
+		            	</PickerColumn>
+	            	</Picker>
+				</View>
+			</View>
+						
+
+			<View class="horizontal">
+				<View class="nameContainer">
+					<Label class="nameClass" text="Page range:"/>
+				</View>
+				<View class="valueContainerVertical">
+					<View class="horizontalOrientation">
+						<Button class="buttonMinus" onClick="decrementRangeFrom"onTouchstart="touchStartClick" onTouchend="touchEndClick" onTouchcancel="touchEndClick" />
+						<Label id="rangeFrom">1</Label>
+						<Button class="buttonPlus" onClick="incrementRangeFrom" onTouchstart="touchStartClick" onTouchend="touchEndClick" onTouchcancel="touchEndClick" />
+					</View>
+					<Label >to:</Label>
+					<View class="horizontalOrientation">
+						<Button class="buttonMinus" onClick="decrementRangeTo" onTouchstart="touchStartClick" onTouchend="touchEndClick" onTouchcancel="touchEndClick" />
+						<Label id="rangeTo"></Label>
+						<Button class="buttonPlus" onClick="incrementRangeTo" onTouchstart="touchStartClick" onTouchend="touchEndClick" onTouchcancel="touchEndClick" />
+					</View>
+				</View>
+			</View>
+			
+			<View class="horizontal">
+				<View class="nameContainer">
+					<Label class="nameClass" text="Folding:"/>
+				</View>
+				<View class="valueContainer">
+					<Picker id="folding" onChange="changeFolding">
+						<PickerColumn>
+			                <PickerRow index="0" title="No"/>
+			                <PickerRow index="1" title="Half-fold"/>
+			                <PickerRow index="2" title="Half-fold (Multi)"/>
+			                <PickerRow index="3" title="Tri-fold"/>
+			                <PickerRow index="4" title="Z-fold"/>
+		            	</PickerColumn>
+	            	</Picker>
+				</View>
+			</View>
+			
+			<View class="horizontal">
+				<View class="nameContainer">
+					<Label class="nameClass" text="Binding:"/>
+				</View>
+				<View class="valueContainer">
+					<Picker id="binding" onChange="changeBinding">
+						<PickerColumn>
+			                <PickerRow index="0" title="Auto"/>
+			                <PickerRow index="1" title="None"/>
+			                <PickerRow index="2" title="Left Bind"/>
+			                <PickerRow index="3" title="Right Bind"/>
+			                <PickerRow index="4" title="Top Bind"/>
+			                <PickerRow index="5" title="Long edge"/>
+			                <PickerRow index="6" title="Short edge"/>
+		            	</PickerColumn>
+	            	</Picker>
+				</View>
+			</View>			
+			
+		
+		</ScrollView>
+        <Button id="printButton" onClick="scanPrinter"/>
+		
+		
+	</Window>
+</Alloy>

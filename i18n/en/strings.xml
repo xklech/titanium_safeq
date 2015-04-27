@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="username_required">Username required</string>
+    <string name="username_cant_be_empty">Username can't be empty</string>
+    <string name="password_required">Password required</string>
+    <string name="password_cant_be_empty">Password can't be empty</string>
+    <string name="no_internet_connection">No internet connection</string>
+    <string name="no_internet_connection_text">There is no internet connection available.</string>
+    
+    <string name="wrong_credentials">Wrong credentials</string>
+    <string name="wrong_username_pass">Wrong username or password.</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="user_name">User name:</string>
+    <string name="user_surname">User surname:</string>
+    <string name="logged_in">Logged in:</string>
+	<string name="logout">Logout</string>
+
+    <!-- List -->
+   	<string name="search_hint">Search</string>
+    <string name="menu_search">Search</string>
+    <string name="menu_update">Update</string>
+    <string name="menu_setting">Setting</string>
+    <string name="print_selected">Print selected</string>
+    <string name="no_print_jon_category">No print job in this category</string>
+    <string name="window_title">Print list</string>
+    <string name="waiting">Waiting</string>
+    <string name="favorite">Favorite</string>
+    <string name="printed">Printed</string>
+    
+    
+    <string name="server_error_unknown">Unknown error while comunicating with server</string>
+    <string name="server_error">Server error</string>
+    <string name="OK">OK</string>
+    <string name="close">Close</string>
+    <string name="unauthorized">Unauthorized</string>
+    <string name="invalid_session_login">Your credentials were not recognized by server. Logouut and login please.</string>
+
+</resources>
