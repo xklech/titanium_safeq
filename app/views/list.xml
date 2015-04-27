@@ -10,14 +10,14 @@
 					<ImageView bindId="image" class="image"/>
 					<View class="itemContainer">
 						<Label bindId="title" class="title"/>
-						<Switch class="shouldPrint" value="false" onChange="switchClicked" />
+						<Switch class="shouldPrint" value="false" onChange="switchClicked" style="Ti.UI.Android.SWITCH_STYLE_CHECKBOX" />
 					</View>
 				</ItemTemplate>
 				<ItemTemplate name="processing" height="55" backgroundColor="lightgray">
 					<ImageView bindId="image" class="image" />
 					<View class="itemContainer" color="darkgray">
 						<Label bindId="title" class="title"/>
-						<Switch class="shouldPrint" value="false" onChange="switchClicked" enabled="false" />
+						<Switch class="shouldPrint" value="false" onChange="switchClicked" enabled="false" style="Ti.UI.Android.SWITCH_STYLE_CHECKBOX" />
 					</View>
 				</ItemTemplate>
 			</Templates>
@@ -66,7 +66,7 @@
 				</FooterView>
             </ListSection>
         </ListView>
-        <Button id="printButton" />
+        <Button id="printButton" onClick="printGroup"/>
         <ActivityIndicator id="activityIndicator" message="Loading printing jobs ..."/>
 	</Window>
 </Alloy>

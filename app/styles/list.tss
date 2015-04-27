@@ -67,7 +67,7 @@
 
 ".shouldPrint": {
 	textAlign: "right",
-	top: 10,
+	height: Titanium.UI.FILL,
 	right: 16
 }
 ".itemContainer": {

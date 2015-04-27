@@ -1,0 +1,105 @@
+
+".container": {
+  	backgroundColor:"white",
+	height: Titanium.UI.FILL,
+	width: Titanium.UI.FILL,
+
+	color: "black"
+}
+
+".scroll": {
+	width: Titanium.UI.FILL,
+	height: Titanium.UI.FILL,
+	layout: "vertical",
+	bottom: 50
+}
+
+".horizontal": {
+	top: 15,
+	layout: "horizontal",
+	width: Titanium.UI.SIZE,
+	height: Titanium.UI.SIZE
+}
+"#colorMode": {
+	left: "10"
+}
+
+"#stapling":{
+	left: 10
+}
+
+"#sides":{
+	left: "10"
+}
+
+"#copyCount": {
+	
+}
+
+"#punchHoles": {
+	left: 10
+}
+
+
+"#folding": {
+	left: 10
+}
+
+"#binding": {
+	left: 10
+}
+".nameContainer": {
+	width: "40%",
+	height: Titanium.UI.SIZE
+}
+
+".valueContainer": {
+	width: "60%",
+	height: Titanium.UI.SIZE,
+	layout: "horizontal"
+}
+
+
+".nameClass": {
+	color: "black",
+	height: Titanium.UI.SIZE,
+	width: Titanium.UI.FILL,
+	textAlign: "right",
+	font:{fontWeight:"bold"},
+}
+
+
+".valueClass": {
+	left:10
+}
+
+".buttonPlus": {
+	left: 10,
+	right: 10,
+	width: 50,
+	height: 50,
+	font:{fontWeight:"bold", fontSize:20},
+	title: "+",
+}
+
+".buttonMinus": {
+	left: 10,
+	right: 10,
+	width: 50,
+	height: 50,
+	font:{fontWeight:"bold", fontSize:20},
+	title: "-"
+}
+
+"#printButton": {	
+	width: Titanium.UI.FILL,
+	height: 50,
+	title: "Print",
+	bottom: 0,
+    borderRadius:1,
+    font:{fontFamily:'Arial',
+    fontWeight:'bold',
+    fontSize:14}
+}
+
+

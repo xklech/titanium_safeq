@@ -1,7 +1,19 @@
 var args = arguments[0] || {};
 
+
 var printJob = Alloy.Collections.printJob;
 var search;
+
+var printIds = [];
+
+
+
+Ti.Gesture.addEventListener('orientationchange',function(e) {
+	printIds = [];
+});
+
+
+
 if(OS_ANDROID){
 	/**
 	 * Whole declaration of android menu items could be in alloy list.xml view, but alloy cant bound own actionView.
@@ -99,6 +111,7 @@ function update(){
 		        }
 
 				// refresh the collection to reflect this in the UI
+				printIds = [];
 				printJob.fetch();
 			};
 		printerJobReq.onerror = function (){
@@ -156,10 +169,38 @@ function showPrintJob(e){
     
 
 
-function switchClicked(){
+
+function switchClicked(e){
 	uiComponentClicked = true;
+	
+	var section = $.listView.sections[e.sectionIndex];
+    // Get the clicked item from that section
+    var item = section.getItemAt(e.itemIndex);
+    var printJobId = item.properties.modelId;
+    //alert("item id: " + printJobId);
+    if(e.value){
+    	if(printIds.indexOf(printJobId) === -1){
+    		printIds[printIds.length] = printJobId;
+    	}
+    }else{
+    	var index = printIds.indexOf(printJobId);
+    	if(index !== -1){
+    		printIds.splice(index, 1);
+    	}
+    }
+    alert("array: " + printIds.toString());
 }
 
+
+
+
+function printGroup(){
+	if(printIds.length === 0){
+		alert("There is no job selected.");
+		return;
+	}
+    Alloy.createController("finishingOptionsGroup", {print: printIds}).getView().open();
+}
 
 /**
  *
