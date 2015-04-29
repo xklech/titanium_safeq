@@ -237,7 +237,60 @@ function openScanner() {
 	// Set callback functions for when scanning succeedes and for when the 
 	// scanning is canceled.
 	picker.setSuccessCallback(function(e) {
-		alert("success (" + e.symbology + "): " + e.barcode);
+		
+		var data = prepareJsonFromScreen();
+		data.printerTag = e.barcode;
+		
+		sendPrintJob(false, data, 
+			function(statusCode, response){ // success
+				if(statusCode == 200){
+						Ti.API.info("close finishing options");
+						$.finishingOptions.close();
+				}else if(statusCode == 202){
+					//prompt force
+					var obj = JSON.parse(response);
+					var missingArray = obj.missingFeatures;
+					var arr = [];
+					for(i=0; i < missingArray.length;i++){
+						var feature = Alloy.Globals.missingFeatureMap(missingArray[i]);
+						arr[arr.length] = feature;
+					}
+					
+					var dialog =Titanium.UI.createAlertDialog({
+						  cancel: 1,
+			              title: "Missing features",
+			              message: "Selected printer is missing requested features: " + arr.toString() + ". Do you want to print job anyway?" ,
+			              buttonNames: ['Print anyway', L('close')]
+		           	 });
+
+				  dialog.addEventListener('click', function(e){
+				    if (!e.cancel){
+				    	sendPrintJob(true, data, function(status, response){
+								$.finishingOptions.close();
+						    },function (response){
+								var missing = JSON.parse(response);
+								Titanium.UI.createAlertDialog({
+						              title: ("printer" === missing.type ? "Unknown printer": "Unknown print job"),
+						              message: ("printer" === missing.type ? "Scanned printer was not found. Please contact administrator.": "Send print job was not found. It was probably deleted. Please refresh your print job list."),
+						              buttonNames: [L('close')]
+						            }).show();
+							});
+					}
+				  });
+				  dialog.show();
+				}
+			},
+			function(response){ // error
+				var missing = JSON.parse(response);
+			Titanium.UI.createAlertDialog({
+	              title: ("printer" === missing.type ? "Unknown printer": "Unknown print job"),
+	              message: ("printer" === missing.type ? "Scanned printer was not found. Please contact administrator.": "Send print job was not found. It was probably deleted. Please refresh your print job list."),
+	              buttonNames: [L('close')]
+	            }).show();
+			});
+		
+		
+		
 		closeScanner();
 	});
 	picker.setCancelCallback(function(e) {
@@ -284,6 +337,59 @@ Ti.Gesture.addEventListener('orientationchange', function(e) {
 		// different than portrait.
 	}
 });
+
+
+function prepareJsonFromScreen(){
+	var object = {};
+	
+	object.id = finishingOptions.get('id');
+	object.colorMode = finishingOptions.get('colorMode');
+	object.sides = finishingOptions.get('sides');
+	object.copyCount = finishingOptions.get('copyCount');
+	object.stapling = finishingOptions.get('stapling');
+	object.punchHoles = finishingOptions.get('punchHoles');
+	object.pageRangeFrom = finishingOptions.get('pageRangeFrom');
+	object.pageRangeTo = finishingOptions.get('pageRangeTo');
+	object.folding = finishingOptions.get('folding');
+	object.binding = finishingOptions.get('binding');	
+	
+	return object;
+}
+
+
+
+function sendPrintJob( force, data, callbackSuccess, callbackError){
+	data.forcePrint = force;
+	var session = Ti.App.Properties.getString('session');
+    var xhr = Titanium.Network.createHTTPClient();
+	
+    xhr.onload = function(e) {
+    	if(callbackSuccess !== undefined){
+    		callbackSuccess(this.status, this.responseText);
+    	}
+    };
+	xhr.onerror = function (){
+		if( this.status === 401 ){
+			Titanium.UI.createAlertDialog({
+	              title: L("wrong_credentials"),
+	              message: L("invalid_session_login"),
+	              buttonNames: [L('close')]
+	            }).show();
+		}else if(callbackError !== undefined && this.status === 404){
+    		callbackError(this.responseText);
+    	} else {
+			Titanium.UI.createAlertDialog({
+	              title: L("server_error"),
+	              message: L("server_error_unknown"),
+	              buttonNames: [L('close')]
+	            }).show();
+		}
+	};
+    xhr.open("POST", Alloy.Globals.API_URL + "/printjob/print");
+	xhr.setRequestHeader(Alloy.Globals.SAFEQ_SESSION_HEADER, session);
+	xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(JSON.stringify(data));
+}
 
 
 

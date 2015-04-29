@@ -27,6 +27,24 @@ if (typeof String.prototype.endsWith != 'function') {
 }
 
 
+Alloy.Globals.missingFeatureMap = 
+	function (missing){
+		switch(missing){
+			case "color":
+				return "Color print";
+			case "sides":
+				return "Sides";
+			case "stapling":
+				return "Stapling";
+			case "punchHoles":
+				return "Punch Holes";
+			case "folding":
+				return "Folding";
+			case "binding":
+				return "Binding";
+			default: return "Unknown";
+		}
+	};
 
 /**
  * 
@@ -82,7 +100,7 @@ if(OS_ANDROID){
 				    	var response = JSON.parse(response);
 				    	var id = response.id;
 				    	var data = { fileName: tmpFile.name};
-				    	sendToServer(data, "POST", "/printjob/send/" + id, session, function(response){
+				    	sendToServer(JSON.stringify(data), "POST", "/printjob/send/" + id, session, function(response){
 				    		Ti.API.info("force update list"); 
 							Ti.App.Properties.setInt('lastUpdate', 0); // force update list
 						});
@@ -124,7 +142,7 @@ if(OS_ANDROID){
 					   		name : textField.value,
 					   		text : body
 					   		};	
-						sendToServer(data, "POST", "/printjob/send", session, function(response){
+						sendToServer(JSON.stringify(data), "POST", "/printjob/send", session, function(response){
 				    		Ti.API.info("force update list"); 
 							Ti.App.Properties.setInt('lastUpdate', 0); // force update list
 							win.close();

@@ -70,12 +70,12 @@ function login(e) {
 		$.loginButton.touchEnabled = true;
 	};
     loginReq.open("POST", Alloy.Globals.API_URL + "/authenticate");
+	loginReq.setRequestHeader("Content-Type", "application/json");
     var params = {
         username: userName,
         password: passwordValue
     };
-
-    loginReq.send(params);
+    loginReq.send(JSON.stringify(params));
 
 }
 

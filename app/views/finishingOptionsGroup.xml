@@ -6,7 +6,7 @@
 				<View class="nameContainer">
 					<Label class="nameClass" text="Color mode:"/>
 				</View>
-				<View class="valueContainer">
+				<View class="valueContainer" onChange="changeColorMode">
 					<Picker id="colorMode">
 						<PickerColumn>
 			                <PickerRow index="0" title="B&W"/>
@@ -22,7 +22,7 @@
 					<Label class="nameClass" text="Sides:"/>
 				</View>
 				<View class="valueContainer">
-					<Picker id="sides">
+					<Picker id="sides" onChange="changeSides">
 						<PickerColumn>
 			                <PickerRow index="0" title="Simplex"/>
 			                <PickerRow index="1" title="Duplex"/>
@@ -45,7 +45,7 @@
 					<Label class="nameClass" text="Stapling:"/>
 				</View>
 				<View class="valueContainer">
-					<Picker id="stapling" >
+					<Picker id="stapling" onChange="changeStapling">
 						<PickerColumn>
 			                <PickerRow index="0" title="No"/>
 			                <PickerRow index="1" title="Left corner top"/>
@@ -65,7 +65,7 @@
 					<Label class="nameClass" text="Punch holes:"/>
 				</View>
 				<View class="valueContainer">
-					<Picker id="punchHoles" >
+					<Picker id="punchHoles" onChange="changePunchHoles">
 						<PickerColumn>
 			                <PickerRow index="0" title="No"/>
 			                <PickerRow index="1" title="2-Hole left"/>
@@ -88,7 +88,7 @@
 					<Label class="nameClass" text="Folding:"/>
 				</View>
 				<View class="valueContainer">
-					<Picker id="folding" >
+					<Picker id="folding" onChange="changeFolding">
 						<PickerColumn>
 			                <PickerRow index="0" title="No"/>
 			                <PickerRow index="1" title="Half-fold"/>
@@ -104,7 +104,7 @@
 				<View class="nameContainer">
 					<Label class="nameClass" text="Binding:"/>
 				</View>
-				<View class="valueContainer">
+				<View class="valueContainer" onChange="changeBinding">
 					<Picker id="binding" >
 						<PickerColumn>
 			                <PickerRow index="0" title="Auto"/>

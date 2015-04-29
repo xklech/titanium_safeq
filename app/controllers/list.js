@@ -188,7 +188,6 @@ function switchClicked(e){
     		printIds.splice(index, 1);
     	}
     }
-    alert("array: " + printIds.toString());
 }
 
 
