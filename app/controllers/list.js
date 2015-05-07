@@ -12,8 +12,21 @@ Ti.Gesture.addEventListener('orientationchange',function(e) {
 	printIds = [];
 });
 
+var control; 
+if(OS_IOS){
+	
+	Alloy.Globals.navWin = $.iosNavigation;
+	
+	control = Ti.UI.createRefreshControl({
+	    tintColor:"black"
+	});
+	$.listView.refreshControl = control;
+	control.addEventListener('refreshstart',function(e){
+	    Ti.API.info('refreshstart');
+	    update();
+	});
 
-
+}
 if(OS_ANDROID){
 	/**
 	 * Whole declaration of android menu items could be in alloy list.xml view, but alloy cant bound own actionView.
@@ -96,6 +109,9 @@ function update(){
 	var printerJobReq = Titanium.Network.createHTTPClient();
 	    printerJobReq.onload = function()
 			{
+				if(OS_IOS){
+					control.endRefreshing();
+				}
 				var db = Ti.Database.open('_alloy_');
 				db.execute('DELETE FROM printJob;');
 				db.close();
@@ -115,6 +131,9 @@ function update(){
 				printJob.fetch();
 			};
 		printerJobReq.onerror = function (){
+			if(OS_IOS){
+				control.endRefreshing();
+			}
 			if( this.status === 401 ){
 				var dialog = Titanium.UI.createAlertDialog({
 		              title: L("unauthorized"),
@@ -138,7 +157,13 @@ function update(){
 
 
 function openSettings(){
-	Alloy.createController("setting").getView().open();
+	var win = Alloy.createController("setting").getView();
+	if(OS_ANDROID){
+		win.open();
+	}else{
+   		$.iosNavigation.openWindow(win);
+	}
+
 }
 
 
@@ -159,12 +184,16 @@ function showPrintJob(e){
     //alert("item: " + JSON.stringify(model));
     
     if(model.get('status') === 'processing'){
-    	alert("Selected print job is being processed by server. Jobs will be now updated.");
+    	alert(L("print_job_processing"));
     	update();
     	return;
     }
-    
-    Alloy.createController("finishingOptions", {printId: item.properties.modelId}).getView().open();
+	var win = Alloy.createController("finishingOptions", {printId: item.properties.modelId}).getView();
+	if(OS_ANDROID){
+		win.open();
+	}else{
+   		$.iosNavigation.openWindow(win);
+	}
 }
     
 
@@ -195,10 +224,15 @@ function switchClicked(e){
 
 function printGroup(){
 	if(printIds.length === 0){
-		alert("There is no job selected.");
+		alert(L("print_job_not_selected"));
 		return;
 	}
-    Alloy.createController("finishingOptionsGroup", {print: printIds}).getView().open();
+    var win = Alloy.createController("finishingOptionsGroup", {print: printIds}).getView();
+	if(OS_ANDROID){
+		win.open();
+	}else{
+   		$.iosNavigation.openWindow(win);
+	}
 }
 
 /**
@@ -264,5 +298,8 @@ function filterFunctionPrinted(collection){
 
 
 printJob.fetch();
+
+
+
 
 

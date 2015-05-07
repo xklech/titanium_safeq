@@ -1,6 +1,6 @@
 <Alloy>
 	<Collection src="printJob" />
-	<Window class="container" onClose="windowClose" onOpen="windowOpen" title="L('window_title')">
+	<Window class="container" onClose="windowClose" onOpen="windowOpen" title="L('window_title')" platform="android">
 
 		<ListView id="listView" defaultItemTemplate="item" onItemclick="showPrintJob">
 			<SearchBar id="search" platform="ios"/>
@@ -10,19 +10,19 @@
 					<ImageView bindId="image" class="image"/>
 					<View class="itemContainer">
 						<Label bindId="title" class="title"/>
-						<Switch class="shouldPrint" value="false" onChange="switchClicked" style="Ti.UI.Android.SWITCH_STYLE_CHECKBOX" />
+						<Switch class="shouldPrint" value="false" onChange="switchClicked" />
 					</View>
 				</ItemTemplate>
 				<ItemTemplate name="processing" height="55" backgroundColor="lightgray">
 					<ImageView bindId="image" class="image" />
 					<View class="itemContainer" color="darkgray">
 						<Label bindId="title" class="title"/>
-						<Switch class="shouldPrint" value="false" onChange="switchClicked" enabled="false" style="Ti.UI.Android.SWITCH_STYLE_CHECKBOX" />
+						<Switch class="shouldPrint" value="false" onChange="switchClicked" enabled="false" />
 					</View>
 				</ItemTemplate>
 			</Templates>
 
-            <ListSection dataCollection="printJob"  dataFilter="filterFunctionWaiting" dataTransform="doTransform">
+            <ListSection dataCollection="printJob"  dataFilter="filterFunctionWaiting" dataTransform="doTransform" headerTitle="L('waiting')">
                 <!-- Sets ListSection's headerView property -->
                 <HeaderView >
                 	<View class="header_background">
@@ -67,6 +67,84 @@
             </ListSection>
         </ListView>
         <Button id="printButton" onClick="printGroup"/>
-        <ActivityIndicator id="activityIndicator" message="Loading printing jobs ..."/>
 	</Window>
+	
+	
+    <!-- iOS Window -->
+    <NavigationWindow id="iosNavigation" platform="ios">
+	<Window class="container" onClose="windowClose" onOpen="windowOpen" title="L('window_title')" platform="ios">
+		<RightNavButton>
+            <Button title="L('menu_setting')" onClick="openSettings" />
+        </RightNavButton>
+		<ListView id="listView" defaultItemTemplate="item" onItemclick="showPrintJob">
+			<SearchBar id="search" platform="ios"/>
+
+			<Templates>
+				<ItemTemplate name="item" height="55">
+					<ImageView bindId="image" class="image"/>
+					<View class="itemContainer">
+						<Label bindId="title" class="title"/>
+						<Switch class="shouldPrint" value="false" onChange="switchClicked" />
+					</View>
+				</ItemTemplate>
+				<ItemTemplate name="processing" height="55" backgroundColor="lightgray">
+					<ImageView bindId="image" class="image" />
+					<View class="itemContainer" color="darkgray">
+						<Label bindId="title" class="title"/>
+						<Switch class="shouldPrint" value="false" onChange="switchClicked" enabled="false" />
+					</View>
+				</ItemTemplate>
+			</Templates>
+
+            <ListSection dataCollection="printJob"  dataFilter="filterFunctionWaiting" dataTransform="doTransform" headerTitle="L('waiting')">
+                <!-- Sets ListSection's headerView property -->
+                <HeaderView >
+                	<View class="header_background">
+                    	<Label class="header_text" text="L('waiting')" />
+                    </View>
+                </HeaderView>
+				<ListItem template="{template}" title:text="{name}" image:image="{image}" searchableText="{name}" modelId="{modelId}" />
+				<FooterView>
+					<View id="emptyWaiting">
+						<Label class="titleEmpty"/>
+					</View>
+				</FooterView>
+
+            </ListSection>
+             <ListSection dataCollection="printJob"  dataFilter="filterFunctionFavorite" dataTransform="doTransform">
+                <!-- Sets ListSection's headerView property -->
+                <HeaderView class="header_container">
+                	<View class="header_background">
+                    	<Label class="header_text" text="L('favorite')" />
+                    </View>
+                </HeaderView>
+                <ListItem template="item" title:text="{name}" image:image="{image}" searchableText="{name}" modelId="{modelId}" />
+				<FooterView>
+					<View id="emptyFavorite">
+						<Label class="titleEmpty"/>
+					</View>
+				</FooterView>
+            </ListSection>
+            <ListSection dataCollection="printJob"  dataFilter="filterFunctionPrinted" dataTransform="doTransform">
+                <!-- Sets ListSection's headerView property -->
+                <HeaderView class="header_container">
+                	<View class="header_background">
+                    	<Label class="header_text" text="L('printed')" />
+                    </View>
+                </HeaderView>
+                <ListItem template="item" title:text="{name}" image:image="{image}" searchableText="{name}" modelId="{modelId}" />
+                <FooterView>
+					<View id="emptyPrinted">
+						<Label class="titleEmpty"/>
+					</View>
+				</FooterView>
+            </ListSection>
+        </ListView>
+        <Button id="printButton" onClick="printGroup"/>
+	</Window>
+    </NavigationWindow>
+	
+	
+	
+	
 </Alloy>

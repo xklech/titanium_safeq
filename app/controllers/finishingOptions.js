@@ -58,7 +58,12 @@ function openWindow(){
 
 
 function showInfo(){
-	Alloy.createController("printDetail", args).getView().open();
+	var win = Alloy.createController("printDetail", args).getView();
+	if(OS_IOS){
+		Alloy.Globals.navWin.openWindow(win);
+	}else{
+		win.open();
+	}
 }
 
 
@@ -215,7 +220,7 @@ if(Ti.Platform.osname == 'iphone' || Ti.Platform.osname == 'ipad'){
 	}
 
 var window = Titanium.UI.createWindow({  
-		title:'Scan printer code',
+		title: L('finishing_options_scan_printer'),
 		navBarHidden:true
 });
 
@@ -258,9 +263,9 @@ function openScanner() {
 					
 					var dialog =Titanium.UI.createAlertDialog({
 						  cancel: 1,
-			              title: "Missing features",
-			              message: "Selected printer is missing requested features: " + arr.toString() + ". Do you want to print job anyway?" ,
-			              buttonNames: ['Print anyway', L('close')]
+			              title: L('finishing_options_scan_missing_features'),
+			              message: L('finishing_options_scan_missing_features_text1') + arr.toString() + ". " + L('finishing_options_scan_missing_features_print_anyway') ,
+			              buttonNames: [L('finishing_options_scan_missing_features_print_anyway_button'), L('close')]
 		           	 });
 
 				  dialog.addEventListener('click', function(e){
@@ -270,8 +275,8 @@ function openScanner() {
 						    },function (response){
 								var missing = JSON.parse(response);
 								Titanium.UI.createAlertDialog({
-						              title: ("printer" === missing.type ? "Unknown printer": "Unknown print job"),
-						              message: ("printer" === missing.type ? "Scanned printer was not found. Please contact administrator.": "Send print job was not found. It was probably deleted. Please refresh your print job list."),
+						              title: ("printer" === missing.type ? L('finishing_options_scan_unknown_printer'): L('finishing_options_scan_unknown_print_job')),
+						              message: ("printer" === missing.type ? L('finishing_options_scan_unknown_printer_text'): L('finishing_options_scan_unknown_print_job_text')),
 						              buttonNames: [L('close')]
 						            }).show();
 							});
@@ -283,9 +288,8 @@ function openScanner() {
 			function(response){ // error
 				var missing = JSON.parse(response);
 			Titanium.UI.createAlertDialog({
-	              title: ("printer" === missing.type ? "Unknown printer": "Unknown print job"),
-	              message: ("printer" === missing.type ? "Scanned printer was not found. Please contact administrator.": "Send print job was not found. It was probably deleted. Please refresh your print job list."),
-	              buttonNames: [L('close')]
+	              title: ("printer" === missing.type ? L('finishing_options_scan_unknown_printer'): L('finishing_options_scan_unknown_print_job')),
+	              message: ("printer" === missing.type ? L('finishing_options_scan_unknown_printer_text'): L('finishing_options_scan_unknown_print_job_text')),	              buttonNames: [L('close')]
 	            }).show();
 			});
 		

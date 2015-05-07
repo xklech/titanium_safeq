@@ -3,8 +3,14 @@
   	backgroundColor:"white",
 	height: Titanium.UI.FILL,
 	width: Titanium.UI.FILL,
-	layout: "vertical",
 	color: "black"
+}
+
+".scroll": {
+	width: Titanium.UI.FILL,
+	height: Titanium.UI.FILL,
+	layout: "vertical",
+	bottom: 50
 }
 
 ".logo":{
@@ -12,6 +18,13 @@
 	image: "/images/ic_safeq.png",
 	width: Titanium.UI.SIZE,
 	height: Titanium.UI.SIZE
+}
+
+".logo[platform=ios]":{
+	top: 20,
+	image: "/images/ic_safeq.png",
+	width: 200,
+	height: 200
 }
 
 ".horizontal": {

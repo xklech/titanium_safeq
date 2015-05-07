@@ -94,7 +94,7 @@
 "#printButton": {	
 	width: Titanium.UI.FILL,
 	height: 50,
-	title: "Print",
+	title: L('finishing_options_print_button'),
 	bottom: 0,
     borderRadius:1,
     font:{fontFamily:'Arial',

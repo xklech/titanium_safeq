@@ -27,24 +27,21 @@ if (typeof String.prototype.endsWith != 'function') {
 }
 
 
-Alloy.Globals.missingFeatureMap = 
-	function (missing){
-		switch(missing){
-			case "color":
-				return "Color print";
-			case "sides":
-				return "Sides";
-			case "stapling":
-				return "Stapling";
-			case "punchHoles":
-				return "Punch Holes";
-			case "folding":
-				return "Folding";
-			case "binding":
-				return "Binding";
-			default: return "Unknown";
-		}
-	};
+Alloy.Globals.missingFeatureMap = function(tag){
+	switch(tag){
+		case "binding": return L('finishing_options_scan_missing_features_binding');
+		case "stapling": return L('finishing_options_scan_missing_features_stapling');
+		case "folding": return L('finishing_options_scan_missing_features_folding');
+		case "punchHoles": return L('finishing_options_scan_missing_features_punch_holes');
+		case "sides": return L('finishing_options_scan_missing_features_sides');
+		case "colorMode": return L('finishing_options_scan_missing_features_color');
+		default: return L('finishing_options_scan_missing_features_unknown');
+	}
+};
+
+
+
+
 
 /**
  * 
@@ -99,7 +96,7 @@ if(OS_ANDROID){
 						Ti.API.info("jsonResponse: " + response); 
 				    	var response = JSON.parse(response);
 				    	var id = response.id;
-				    	var data = { fileName: tmpFile.name};
+				    	var data = { fileName: tmpFile.name, mimeType: intentType};
 				    	sendToServer(JSON.stringify(data), "POST", "/printjob/send/" + id, session, function(response){
 				    		Ti.API.info("force update list"); 
 							Ti.App.Properties.setInt('lastUpdate', 0); // force update list
@@ -171,6 +168,38 @@ if(OS_ANDROID){
 }
 
 
+
+if(OS_IOS){	
+	Ti.App.addEventListener('resumed', function(){ // notice *resumed*
+	    var fileURL = Ti.App.getArguments();
+	    if (fileURL.hasOwnProperty('url')) {
+			var session = Ti.App.Properties.getString('session');
+			if(session == null || session == "") {
+			    Ti.UI.createAlertDialog({
+				    title: "Not logged in",
+				    message: "To upload files you must be logged in. Log in and try again."
+			    }).show();
+				return;
+			}
+	        var url = fileURL.url;
+		    var tmpFile = Ti.Filesystem.getFile(url);
+		    //var fileData = Ti.Filesystem.getFile(Ti.Filesystem.getTempDirectory() + tmpFile.name);
+		    //tmpFile.copy(fileData.nativePath); //the copy can be handled like any other normal file
+			sendToServer(tmpFile, "PUT", "/printjob/send", session, function(response){
+				Ti.API.info("jsonResponse: " + response); 
+		    	var response = JSON.parse(response);
+		    	var id = response.id;
+				var mimeTypeFile = tmpFile.read().getMimeType();
+				var data = { fileName: tmpFile.name, mimeType: mimeTypeFile};
+		    	sendToServer(JSON.stringify(data), "POST", "/printjob/send/" + id, session, function(response){
+		    		Ti.API.info("force update list"); 
+					Ti.App.Properties.setInt('lastUpdate', 0); // force update list
+				});
+			});
+	    }
+	});
+	 
+};
 
 
 function sendToServer(data, method, url, session, calbbackSuccess, callbackFail){

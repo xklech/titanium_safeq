@@ -72,6 +72,12 @@
 	layout: "horizontal"
 }
 
+".valueContainerVertical[platform=ios]": {
+	width: "60%",
+	height: Titanium.UI.SIZE,
+	layout: "vertical"
+}
+
 ".horizontalOrientation": {
 	layout: "horizontal",
 	width: Titanium.UI.SIZE,
@@ -112,7 +118,7 @@
 "#printButton": {	
 	width: Titanium.UI.FILL,
 	height: 50,
-	title: "Print",
+	title: L('finishing_options_print_button'),
 	bottom: 0,
     borderRadius:1,
     font:{fontFamily:'Arial',

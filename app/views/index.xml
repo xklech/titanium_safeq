@@ -4,7 +4,7 @@
 			
 			<ImageView class="logo"></ImageView>
 			<View class="horizontal">
-				<ImageView class="ic_user" class="ic_user"></ImageView>
+				<ImageView class="ic_user"></ImageView>
 				<TextField id="editTextUserName" ></TextField>
 			</View>
 			<View class="horizontal">

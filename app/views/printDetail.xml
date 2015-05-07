@@ -1,9 +1,9 @@
 <Alloy>
-	<Window class="container" onOpen="openWindow" title="Print job detail">
+	<Window class="container" onOpen="openWindow" title="L('job_detail_title')">
  		<ScrollView class="scroll">		
 			<View class="horizontal">
 				<View class="nameContainer">
-					<Label class="nameClass" text="Name:" />
+					<Label class="nameClass" text="L('job_detail_name')" />
 				</View>
 				<View class="nameContainer">
 					<Label id="detailName" class="valueClass"></Label>
@@ -11,7 +11,7 @@
 			</View>
 			<View class="horizontal">
 				<View class="nameContainer">
-					<Label class="nameClass" text="Type:"/>
+					<Label class="nameClass" text="L('job_detail_type')"/>
 				</View>
 				<View class="nameContainer">
 					<Label id="detailType" class="valueClass"></Label>
@@ -19,7 +19,7 @@
 			</View>
 			<View class="horizontal">
 				<View class="nameContainer">
-					<Label class="nameClass" text="Size:" />
+					<Label class="nameClass" text="L('job_detail_size')" />
 				</View>
 				<View class="nameContainer">
 					<Label id="detailSize" class="valueClass"></Label>
@@ -27,7 +27,7 @@
 			</View>
 			<View class="horizontal">
 				<View class="nameContainer">
-					<Label class="nameClass" text="Added:" />
+					<Label class="nameClass" text="L('job_detail_added')" />
 				</View>
 				<View class="nameContainer">
 					<Label id="detailAdded" class="valueClass"></Label>
@@ -35,7 +35,7 @@
 			</View>
 			<View class="horizontal">
 				<View class="nameContainer">
-					<Label class="nameClass" text="Black/White pages:" />
+					<Label class="nameClass" text="L('job_detail_black_white')" />
 				</View>
 				<View class="nameContainer">
 					<Label id="detailBWPages" class="valueClass"></Label>
@@ -43,7 +43,7 @@
 			</View>
 			<View class="horizontal">
 				<View class="nameContainer">
-					<Label class="nameClass" text="Color pages:" />
+					<Label class="nameClass" text="L('job_detail_color_pages')" />
 				</View>
 				<View class="nameContainer">
 					<Label id="detailColorPages" class="valueClass"></Label>
@@ -51,7 +51,7 @@
 			</View>
 			<View class="horizontal">
 				<View class="nameContainer">
-					<Label class="nameClass" text="Owner:" />
+					<Label class="nameClass" text="L('job_detail_owner')" />
 				</View>
 				<View class="nameContainer">
 					<Label id="detailOwner" class="valueClass"></Label>
@@ -59,7 +59,7 @@
 			</View>
 			<View class="horizontal">
 				<View class="nameContainer">
-					<Label class="nameClass" text="Paper size:" />
+					<Label class="nameClass" text="L('job_detail_paper_size')" />
 				</View>
 				<View class="nameContainer">
 					<Label id="detailPaperSize" class="valueClass"></Label>
@@ -67,7 +67,7 @@
 			</View>
 			<View class="horizontal" bottom="10">
 				<View class="nameContainer">
-					<Label class="nameClass" text="Favorite:" />
+					<Label class="nameClass" text="L('job_detail_favorite')" />
 				</View>
 				<View class="nameContainer">
 					<Label id="detailFavorite" class="valueClass"></Label>

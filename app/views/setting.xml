@@ -1,5 +1,6 @@
 <Alloy>
  	<Window class="container" title="Settings">
+ 		<ScrollView class="scroll">		
 			<ImageView class="logo"></ImageView>
 			<View class="horizontal">
 				<Label color="black" text="L('user_name')" />
@@ -14,5 +15,6 @@
 				<Label id="settingLoggedIn" color="black"></Label>
 			</View>
 			<Button id="logoutButton" onClick="logout"></Button>
+		</ScrollView>
 	</Window>
 </Alloy>

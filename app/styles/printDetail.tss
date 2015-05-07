@@ -7,23 +7,16 @@
 	color: "black"
 }
 
-".logo":{
-	top: 20,
-	image: "/images/ic_safeq.png",
-	width: Titanium.UI.SIZE,
-	height: Titanium.UI.SIZE
-}
-
 ".horizontal": {
 	top: 15,
 	layout: "horizontal",
-	width: Titanium.UI.SIZE,
+	width: Titanium.UI.FILL,
 	height: Titanium.UI.SIZE
 }
 
 ".valueClass": {
 	left:10,
-	height: Titanium.UI.FILL,
+	height: Titanium.UI.SIZE,
 	width: Titanium.UI.FILL,
 	textAlign: "left"
 }

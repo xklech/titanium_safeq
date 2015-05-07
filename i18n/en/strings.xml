@@ -28,13 +28,113 @@
     <string name="waiting">Waiting</string>
     <string name="favorite">Favorite</string>
     <string name="printed">Printed</string>
+    <string name="print_job_processing">Selected print job is being processed by server. Jobs will be now updated.</string>
+    <string name="print_job_not_selected">There is no job selected.</string>
     
     
+    <!-- Finifhing options -->
+    <string name="finishing_options_title">Finishing options</string>
+    <string name="finishing_options_show_info">Show info</string>
+    <string name="finishing_options_color_mode">Color mode:</string>
+    	<string name="finishing_options_color_mode_black_white">B&W</string>  
+    	<string name="finishing_options_color_mode_color">Color</string>  
+    	<string name="finishing_options_color_mode_autocolor">Autocolor</string>  
+    	<string name="finishing_options_color_mode_grayscale">Grayscale</string>  
+    <string name="finishing_options_sides">Sides:</string>
+    	<string name="finishing_options_sides_simplex">Simplex</string>  
+    	<string name="finishing_options_sides_duplex">Duplex</string>  
+    <string name="finishing_options_copy_count">Copy count:</string>
+    <string name="finishing_options_stapling">Stapling:</string>
+    	<string name="finishing_options_stapling_no">No</string>  
+    	<string name="finishing_options_stapling_left_top">Left corner top</string>  
+    	<string name="finishing_options_stapling_right_top">Right corner top</string>  
+    	<string name="finishing_options_stapling_two_positions">2 positions</string>   
+    	<string name="finishing_options_stapling_left_two">Left two</string>  
+    	<string name="finishing_options_stapling_right_two">Right two</string>  
+    	<string name="finishing_options_stapling_top_two">Top two</string>  
+    
+    <string name="finishing_options_punch_holes">Punch holes:</string>
+    	<string name="finishing_options_punch_holes_no">No</string>  
+    	<string name="finishing_options_punch_holes_left_two">2-Hole left</string>  
+    	<string name="finishing_options_punch_holes_left_three">3-Hole left</string>  
+    	<string name="finishing_options_punch_holes_left_four">4-Hole left</string>   
+    	<string name="finishing_options_punch_holes_right_two">2-Hole right</string>  
+    	<string name="finishing_options_punch_holes_right_three">3-Hole right</string>  
+    	<string name="finishing_options_punch_holes_right_four">4-Hole right</string>  
+    	<string name="finishing_options_punch_holes_top_two">2-Hole top</string>  
+    	<string name="finishing_options_punch_holes_top_three">3-Hole top</string>  
+    	<string name="finishing_options_punch_holes_top_four">4-Hole top</string>  
+    
+    <string name="finishing_options_page_range">Page range:</string>
+    <string name="finishing_options_page_range_to">to:</string>
+    <string name="finishing_options_foolding">Folding:</string>  
+    	<string name="finishing_options_foolding_no">No</string>  
+    	<string name="finishing_options_foolding_half_fold">Half-fold</string>  
+    	<string name="finishing_options_foolding_half_fold_multi">Half-fold (Multi)</string>  
+    	<string name="finishing_options_foolding_tri_fold">Tri-fold</string>   
+    	<string name="finishing_options_foolding_z_fold">Z-fold</string>  
+    
+    <string name="finishing_options_binding">Binding:</string>  
+    	<string name="finishing_options_binding_auto">Auto</string>  
+    	<string name="finishing_options_binding_none">None</string>  
+    	<string name="finishing_options_binding_left_bind">Left Bind</string>  
+    	<string name="finishing_options_binding_right_bind">Right Bind</string>   
+    	<string name="finishing_options_binding_top_bind">Top Bind</string>  
+    	<string name="finishing_options_binding_long_edge">Long edge</string>   
+    	<string name="finishing_options_binding_short_edge">Short edge</string>  
+    <string name="finishing_options_print_button">Print</string>  
+
+    
+    
+    <!-- Finifhing options - scanning and printing-->
+    <string name="finishing_options_scan_printer">Scan printer code</string>  
+    <string name="finishing_options_scan_missing_features">Missing features</string>  
+    <string name="finishing_options_scan_missing_features_text1">Selected printer is missing requested features:</string>  
+    <string name="finishing_options_scan_missing_features_print_anyway">Do you want to print job anyway?</string>  
+    <string name="finishing_options_scan_missing_features_print_anyway_button">Print anyway</string>  
+
+    <string name="finishing_options_scan_missing_features_binding">binding</string>  
+    <string name="finishing_options_scan_missing_features_stapling">stapling</string>  
+    <string name="finishing_options_scan_missing_features_folding">folding</string>  
+    <string name="finishing_options_scan_missing_features_punch_holes">punch holes</string>  
+    <string name="finishing_options_scan_missing_features_sides">sides</string>  
+    <string name="finishing_options_scan_missing_features_color">color</string>  
+    <string name="finishing_options_scan_missing_features_unknown">unknown</string>  
+
+    <string name="finishing_options_scan_unknown_printer">Unknown printer</string>  
+    <string name="finishing_options_scan_unknown_printer_text">Scanned printer was not found. Please contact administrator.</string>      
+    
+    <string name="finishing_options_scan_unknown_print_job">Unknown print job</string>  
+    <string name="finishing_options_scan_unknown_print_job_text">Send print job was not found. It was probably deleted. Please refresh your print job list.</string>  
+
+
+
+    <!-- Print job detail-->
+    <string name="job_detail_title">Print job detail</string>  
+    <string name="job_detail_name">Name:</string>  
+    <string name="job_detail_type">Type:</string>  
+    <string name="job_detail_size">Size:</string>  
+    <string name="job_detail_added">Added:</string>  
+    <string name="job_detail_black_white">Black/White pages:</string>  
+    <string name="job_detail_color_pages">Color pages:</string>  
+    <string name="job_detail_paper_size">Paper size:</string>  
+    <string name="job_detail_favorite">Favorite:</string>  
+    <string name="job_detail_owner">Owner:</string>  
+
+
+
+
+
     <string name="server_error_unknown">Unknown error while comunicating with server</string>
     <string name="server_error">Server error</string>
     <string name="OK">OK</string>
     <string name="close">Close</string>
     <string name="unauthorized">Unauthorized</string>
     <string name="invalid_session_login">Your credentials were not recognized by server. Logouut and login please.</string>
+
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+
 
 </resources>

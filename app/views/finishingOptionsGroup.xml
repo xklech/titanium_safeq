@@ -1,38 +1,37 @@
 <Alloy>
-	<Window class="container" onOpen="openWindow" title="Finishing options">
-
+	<Window class="container" onOpen="openWindow" title="L('finishing_options_title')">
  		<ScrollView class="scroll">		
 			<View class="horizontal">
 				<View class="nameContainer">
-					<Label class="nameClass" text="Color mode:"/>
+					<Label class="nameClass" text="L('finishing_options_color_mode')"/>
 				</View>
-				<View class="valueContainer" onChange="changeColorMode">
-					<Picker id="colorMode">
+				<View class="valueContainer">
+					<Picker id="colorMode" onChange="changeColorMode">
 						<PickerColumn>
-			                <PickerRow index="0" title="B&W"/>
-			                <PickerRow index="1" title="Color"/>
-			                <PickerRow index="2" title="Autocolor"/>
-			                <PickerRow index="3" title="Grayscale"/>
+			                <PickerRow index="0" title="L('finishing_options_color_mode_black_white')"/>
+			                <PickerRow index="1" title="L('finishing_options_color_mode_color')"/>
+			                <PickerRow index="2" title="L('finishing_options_color_mode_autocolor')"/>
+			                <PickerRow index="3" title="L('finishing_options_color_mode_grayscale')"/>
 		            	</PickerColumn>
 	            	</Picker>
 				</View>
 			</View>
 			<View class="horizontal">
 				<View class="nameContainer">
-					<Label class="nameClass" text="Sides:"/>
+					<Label class="nameClass" text="L('finishing_options_sides')"/>
 				</View>
 				<View class="valueContainer">
 					<Picker id="sides" onChange="changeSides">
 						<PickerColumn>
-			                <PickerRow index="0" title="Simplex"/>
-			                <PickerRow index="1" title="Duplex"/>
+			                <PickerRow index="0" title="L('finishing_options_sides_simplex')"/>
+			                <PickerRow index="1" title="L('finishing_options_sides_duplex')"/>
 		            	</PickerColumn>
 	            	</Picker>
 				</View>
 			</View>
 			<View class="horizontal">
 				<View class="nameContainer">
-					<Label class="nameClass" text="Copy count:"/>
+					<Label class="nameClass" text="L('finishing_options_copy_count')"/>
 				</View>
 				<View class="valueContainer">
 					<Button class="buttonMinus" onClick="decrementCopyCount" onTouchstart="touchStartClick" onTouchend="touchEndClick" onTouchcancel="touchEndClick" />
@@ -42,23 +41,22 @@
 			</View>
 			<View class="horizontal">
 				<View class="nameContainer">
-					<Label class="nameClass" text="Stapling:"/>
+					<Label class="nameClass" text="L('finishing_options_stapling')"/>
 				</View>
 				<View class="valueContainer">
 					<Picker id="stapling" onChange="changeStapling">
 						<PickerColumn>
-			                <PickerRow index="0" title="No"/>
-			                <PickerRow index="1" title="Left corner top"/>
-			                <PickerRow index="2" title="Right corner top"/>
-			                <PickerRow index="3" title="2 positions"/>
-			                <PickerRow index="4" title="Left two"/>
-			                <PickerRow index="5" title="Right two"/>
-			                <PickerRow index="6" title="Top two"/>
+			                <PickerRow index="0" title="L('finishing_options_stapling_no')"/>
+			                <PickerRow index="1" title="L('finishing_options_stapling_left_top')"/>
+			                <PickerRow index="2" title="L('finishing_options_stapling_right_top')"/>
+			                <PickerRow index="3" title="L('finishing_options_stapling_two_positions')"/>
+			                <PickerRow index="4" title="L('finishing_options_stapling_left_two')"/>
+			                <PickerRow index="5" title="L('finishing_options_stapling_right_two')"/>
+			                <PickerRow index="6" title="L('finishing_options_stapling_top_two')"/>
 		            	</PickerColumn>
 	            	</Picker>
 				</View>
 			</View>
-			
 			
 			<View class="horizontal">
 				<View class="nameContainer">
@@ -67,34 +65,33 @@
 				<View class="valueContainer">
 					<Picker id="punchHoles" onChange="changePunchHoles">
 						<PickerColumn>
-			                <PickerRow index="0" title="No"/>
-			                <PickerRow index="1" title="2-Hole left"/>
-			                <PickerRow index="2" title="3-Hole left"/>
-			                <PickerRow index="3" title="4-Hole left"/>
-			                <PickerRow index="4" title="2-Hole right"/>
-			                <PickerRow index="5" title="3-Hole right"/>
-			                <PickerRow index="6" title="4-Hole right"/>
-			                <PickerRow index="7" title="2-Hole top"/>
-			                <PickerRow index="8" title="3-Hole top"/>
-			                <PickerRow index="9" title="4-Hole top"/>    
+			                <PickerRow index="0" title="L('finishing_options_punch_holes_no')"/>
+			                <PickerRow index="1" title="L('finishing_options_punch_holes_left_two')"/>
+			                <PickerRow index="2" title="L('finishing_options_punch_holes_left_three')"/>
+			                <PickerRow index="3" title="L('finishing_options_punch_holes_left_four')"/>
+			                <PickerRow index="4" title="L('finishing_options_punch_holes_right_two')"/>
+			                <PickerRow index="5" title="L('finishing_options_punch_holes_right_three')"/>
+			                <PickerRow index="6" title="L('finishing_options_punch_holes_right_four')"/>
+			                <PickerRow index="7" title="L('finishing_options_punch_holes_top_two')"/>
+			                <PickerRow index="8" title="L('finishing_options_punch_holes_top_three')"/>
+			                <PickerRow index="9" title="L('finishing_options_punch_holes_top_four')"/>    
 		            	</PickerColumn>
 	            	</Picker>
 				</View>
 			</View>
-						
-			
+    
 			<View class="horizontal">
 				<View class="nameContainer">
-					<Label class="nameClass" text="Folding:"/>
+					<Label class="nameClass" text="L('finishing_options_foolding')"/>
 				</View>
 				<View class="valueContainer">
 					<Picker id="folding" onChange="changeFolding">
 						<PickerColumn>
-			                <PickerRow index="0" title="No"/>
-			                <PickerRow index="1" title="Half-fold"/>
-			                <PickerRow index="2" title="Half-fold (Multi)"/>
-			                <PickerRow index="3" title="Tri-fold"/>
-			                <PickerRow index="4" title="Z-fold"/>
+			                <PickerRow index="0" title="L('finishing_options_foolding_no')"/>
+			                <PickerRow index="1" title="L('finishing_options_foolding_half_fold')"/>
+			                <PickerRow index="2" title="L('finishing_options_foolding_half_fold_multi')"/>
+			                <PickerRow index="3" title="L('finishing_options_foolding_tri_fold')"/>
+			                <PickerRow index="4" title="L('finishing_options_foolding_z_fold')"/>
 		            	</PickerColumn>
 	            	</Picker>
 				</View>
@@ -102,24 +99,23 @@
 			
 			<View class="horizontal">
 				<View class="nameContainer">
-					<Label class="nameClass" text="Binding:"/>
+					<Label class="nameClass" text="L('finishing_options_binding')"/>
 				</View>
-				<View class="valueContainer" onChange="changeBinding">
-					<Picker id="binding" >
+				<View class="valueContainer">
+					<Picker id="binding" onChange="changeBinding">
 						<PickerColumn>
-			                <PickerRow index="0" title="Auto"/>
-			                <PickerRow index="1" title="None"/>
-			                <PickerRow index="2" title="Left Bind"/>
-			                <PickerRow index="3" title="Right Bind"/>
-			                <PickerRow index="4" title="Top Bind"/>
-			                <PickerRow index="5" title="Long edge"/>
-			                <PickerRow index="6" title="Short edge"/>
+			                <PickerRow index="0" title="L('finishing_options_binding_auto')"/>
+			                <PickerRow index="1" title="L('finishing_options_binding_none')"/>
+			                <PickerRow index="2" title="L('finishing_options_binding_left_bind')"/>
+			                <PickerRow index="3" title="L('finishing_options_binding_right_bind')"/>
+			                <PickerRow index="4" title="L('finishing_options_binding_top_bind')"/>
+			                <PickerRow index="5" title="L('finishing_options_binding_long_edge')"/>
+			                <PickerRow index="6" title="L('finishing_options_binding_short_edge')"/>
 		            	</PickerColumn>
 	            	</Picker>
 				</View>
 			</View>			
-			
-		
+    
 		</ScrollView>
         <Button id="printButton" onClick="scanPrinter"/>
 		

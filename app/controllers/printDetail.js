@@ -3,13 +3,14 @@ var args = arguments[0] || {};
 
 var job = Alloy.Collections.printJob.get(args.printId);
 
+
 function openWindow(){
 
 	if(!job){
 		$.printDetail.close();
 		return;
 	}
-
+	Ti.API.info("display info about print job");
 	$.detailName.text = job.get("name");
 	$.detailType.text = job.get("type");
 	$.detailSize.text = humanFileSize(job.get("size"), true);
@@ -33,7 +34,7 @@ function openWindow(){
 	$.detailOwner.text = job.get("owner");
 	$.detailPaperSize.text = job.get("paperSize");
 	$.detailType.text = job.get("type");
-	$.detailFavorite.text = job.get("status") === "favorite" ? "Yes" : "No";
+	$.detailFavorite.text = job.get("status") === "favorite" ? L('yes') : L('no');
 	
 }
 

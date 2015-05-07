@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="username_required">Uživatelské jméno je povinné</string>
+    <string name="username_cant_be_empty">Uživatelské jméno nemůže být prázdné</string>
+    <string name="password_required">Heslo je povinné</string>
+    <string name="password_cant_be_empty">Heslo nemůže být prázdné</string>
+    <string name="no_internet_connection">Chybí připojení k internetu</string>
+    <string name="no_internet_connection_text">Připojení k inetrnetu není k dispozici.</string>
+    
+    <string name="wrong_credentials">Neplatné přihlášení</string>
+    <string name="wrong_username_pass">Chybné uživatelské jméno nebo heslo.</string>
+    <string name="username">Uživatelské jméno</string>
+    <string name="password">Heslo</string>
+    <string name="login">Přihlásit</string>
+    <string name="user_name">Jméno:</string>
+    <string name="user_surname">Příjmení:</string>
+    <string name="logged_in">Přihlášen:</string>
+	<string name="logout">Odhlásit</string>
+
+    <!-- List -->
+   	<string name="search_hint">Hledat</string>
+    <string name="menu_search">Hledat</string>
+    <string name="menu_update">Aktualizovat</string>
+    <string name="menu_setting">Nastavení</string>
+    <string name="print_selected">Vytisknout vybrané</string>
+    <string name="no_print_jon_category">Žádná tisková úloha v této kategorii</string>
+    <string name="window_title">Tiskové úlohy</string>
+    <string name="waiting">Čekající</string>
+    <string name="favorite">Oblibené</string>
+    <string name="printed">Vytištěné</string>
+    <string name="print_job_processing">Vybraná úloha se zpracovává na serveru. Úlohy budou nyní aktualizovány.</string>
+    <string name="print_job_not_selected">Není vybraná žádná úloha k tisku.</string>
+    
+    
+    <!-- Finifhing options -->
+    <string name="finishing_options_title">Vlastnosti tisku</string>
+    <string name="finishing_options_show_info">Zobrazit informace</string>
+    <string name="finishing_options_color_mode">Barevný mód:</string>
+    	<string name="finishing_options_color_mode_black_white">Černo bilý</string>  
+    	<string name="finishing_options_color_mode_color">Barevný</string>  
+    	<string name="finishing_options_color_mode_autocolor">Auto-barevný</string>  
+    	<string name="finishing_options_color_mode_grayscale">Škála šedi</string>  
+    <string name="finishing_options_sides">Strany:</string>
+    	<string name="finishing_options_sides_simplex">Jednostranný</string>  
+    	<string name="finishing_options_sides_duplex">Oboustranný</string>  
+    <string name="finishing_options_copy_count">Počet kopií:</string>
+    <string name="finishing_options_stapling">Sešívání:</string>
+    	<string name="finishing_options_stapling_no">Žádné</string>  
+    	<string name="finishing_options_stapling_left_top">Levý horní roh</string>  
+    	<string name="finishing_options_stapling_right_top">Pravý horní roh</string>  
+    	<string name="finishing_options_stapling_two_positions">2 pozice</string>   
+    	<string name="finishing_options_stapling_left_two">Levé dvě</string>  
+    	<string name="finishing_options_stapling_right_two">Pravé dvě</string>  
+    	<string name="finishing_options_stapling_top_two">Horní dvě</string>  
+    
+    <string name="finishing_options_punch_holes">Děrování:</string>
+    	<string name="finishing_options_punch_holes_no">Žádné</string>  
+    	<string name="finishing_options_punch_holes_left_two">2-díry v levo</string>  
+    	<string name="finishing_options_punch_holes_left_three">3-díry v levo</string>  
+    	<string name="finishing_options_punch_holes_left_four">4-díry v levo</string>   
+    	<string name="finishing_options_punch_holes_right_two">2-díry v pravo</string>  
+    	<string name="finishing_options_punch_holes_right_three">3-díry v pravo</string>  
+    	<string name="finishing_options_punch_holes_right_four">4-díry v pravo</string>  
+    	<string name="finishing_options_punch_holes_top_two">2-díry nahoře</string>  
+    	<string name="finishing_options_punch_holes_top_three">3-díry nahoře</string>  
+    	<string name="finishing_options_punch_holes_top_four">4-díry nahoře</string>  
+    
+    <string name="finishing_options_page_range">Rozsah stran:</string>
+    <string name="finishing_options_page_range_to">do:</string>
+    <string name="finishing_options_foolding">Skládání:</string>  
+    	<string name="finishing_options_foolding_no">Žádné</string>  
+    	<string name="finishing_options_foolding_half_fold">Poloviny</string>  
+    	<string name="finishing_options_foolding_half_fold_multi">Poloviny (Multi)</string>  
+    	<string name="finishing_options_foolding_tri_fold">Tri-skládání</string>   
+    	<string name="finishing_options_foolding_z_fold">Z-skládání</string>  
+    
+    <string name="finishing_options_binding">Vázání:</string>  
+    	<string name="finishing_options_binding_auto">Auto</string>  
+    	<string name="finishing_options_binding_none">Žádné</string>  
+    	<string name="finishing_options_binding_left_bind">V levo</string>  
+    	<string name="finishing_options_binding_right_bind">V pravo</string>   
+    	<string name="finishing_options_binding_top_bind">Nahoře</string>  
+    	<string name="finishing_options_binding_long_edge">Dlouhá hrana</string>   
+    	<string name="finishing_options_binding_short_edge">Krátká hrana</string>  
+    <string name="finishing_options_print_button">Tisknout</string>  
+
+    
+    
+    <!-- Finifhing options - scanning and printing-->
+    <string name="finishing_options_scan_printer">Oskenujte kód tiskárny</string>  
+    <string name="finishing_options_scan_missing_features">Chybějící schopnosti tiskárny</string>  
+    <string name="finishing_options_scan_missing_features_text1">Vybraná tiskárna nepodporuje vybrané vlastnosti tisku:</string>  
+    <string name="finishing_options_scan_missing_features_print_anyway">Chcete dokument i tak vytisknout?</string>  
+    <string name="finishing_options_scan_missing_features_print_anyway_button">Vytisknout</string>  
+
+    <string name="finishing_options_scan_missing_features_binding">Vázání</string>  
+    <string name="finishing_options_scan_missing_features_stapling">Sešívání</string>  
+    <string name="finishing_options_scan_missing_features_folding">Skládání</string>  
+    <string name="finishing_options_scan_missing_features_punch_holes">Děrování</string>  
+    <string name="finishing_options_scan_missing_features_sides">Strany</string>  
+    <string name="finishing_options_scan_missing_features_color">Barevně</string>  
+    <string name="finishing_options_scan_missing_features_unknown">neznámá vlastnost</string>  
+
+    <string name="finishing_options_scan_unknown_printer">Neznámá tiskárna</string>  
+    <string name="finishing_options_scan_unknown_printer_text">Oskenovaná tiskárna nebyla nalezena. Prosím kontaktujte správce.</string>      
+    
+    <string name="finishing_options_scan_unknown_print_job">Neznámá tisková úloha</string>  
+    <string name="finishing_options_scan_unknown_print_job_text">Odeslaná tisková úloha nebyla nalezena. Úloha byla pravděpodobně smazána. Prosím aktualizujte svůj seznam tiskových úloh.</string>  
+
+
+    <!-- Print job detail-->
+    <string name="job_detail_title">Detail tiskové úlohy</string>  
+    <string name="job_detail_name">Název:</string>  
+    <string name="job_detail_type">Typ:</string>  
+    <string name="job_detail_size">Velikost:</string>  
+    <string name="job_detail_added">Přidáno:</string>  
+    <string name="job_detail_black_white">Černo bílých stránek:</string>  
+    <string name="job_detail_color_pages">Barevných stránek:</string>  
+    <string name="job_detail_paper_size">Velikost papíru:</string>  
+    <string name="job_detail_favorite">Oblíbené:</string>  
+    <string name="job_detail_owner">Vlastník:</string>  
+
+
+
+    <string name="server_error_unknown">Nastala neznámá chyba při komunikaci se serverem</string>
+    <string name="server_error">Chyba serveru</string>
+    <string name="OK">OK</string>
+    <string name="close">Zavřít</string>
+    <string name="unauthorized">Neautorizovaný</string>
+    <string name="invalid_session_login">Vaše informace o přihlášení nebyli serverem rozpoznány. Prosím odhlašte se a přihlašte se znovu.</string>
+
+    <string name="yes">Ano</string>
+    <string name="no">Ne</string>
+
+</resources>
