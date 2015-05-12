@@ -110,14 +110,14 @@ if(OS_ANDROID){
 				        height: Ti.UI.SIZE,
 				        width: Ti.UI.FILL,
 				        left: 16,
-				        right: 16
+				        right: 16,
+				        top: 16
 				    });
 				    var label = Ti.UI.createLabel({
-				    	text: "Print job name: ",
-				    	textAligment: Ti.UI.TEXT_ALIGNMENT_RIGHT,
+				    	text: L('print_job_name'),
+				    	textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
 				    	width: "50%",
-				    	height: 30,
-				    	left: 0
+				    	height: 30
 				    });
 				    var textField =  Ti.UI.createTextField({
 					  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
@@ -127,9 +127,10 @@ if(OS_ANDROID){
 
 				    
 				    var button = Titanium.UI.createButton({
-					   title: 'Send',
+					   title: L('send'),
 					   width: 300,
-					   height: 50
+					   height: 50,
+					   top: 16
 					});
 					button.addEventListener('click',function(e)
 					{

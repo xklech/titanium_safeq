@@ -132,4 +132,8 @@
     <string name="yes">Ano</string>
     <string name="no">Ne</string>
 
+	<string name="send">Odeslat</string>
+	<string name="print_job_name">Název tiskové úlohy: </string>
+
+
 </resources>

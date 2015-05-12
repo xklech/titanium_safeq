@@ -67,7 +67,7 @@
 			
 			<View class="horizontal">
 				<View class="nameContainer">
-					<Label class="nameClass" text="Punch holes:"/>
+					<Label class="nameClass" text="L('finishing_options_punch_holes')"/>
 				</View>
 				<View class="valueContainer">
 					<Picker id="punchHoles" onChange="changePunchHoles">

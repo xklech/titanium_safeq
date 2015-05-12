@@ -1,5 +1,5 @@
 <Alloy>
- 	<Window class="container" title="Settings">
+ 	<Window class="container" title="L('menu_setting')">
  		<ScrollView class="scroll">		
 			<ImageView class="logo"></ImageView>
 			<View class="horizontal">
